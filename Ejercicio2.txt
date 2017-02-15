@@ -1,0 +1,39 @@
+taller peliculas
+
+Ingresar 5 películas más, con nombres y años
+distintos.
+
+insert into movie (name,year) values ('El dia de la independencia',1985);
+insert into movie (name,year) values ('Taxi para tres',2002);
+insert into movie (name,year) values ('EL Patriota',1987);
+insert into movie (name,year) values ('Titanic',1999);
+insert into movie (name,year) values ('space jam',1995);
+
+devolver las primeras 3 películas (ordenadas
+alfabéticamente)
+
+select * from movie order by name asc limit 3;
+
+devolver las últimas 3 películas (ordenadas por año)
+
+select * from movie order by year limit 3;
+
+Contar la cantidad de películas en la base de datos
+
+select count(*) from movie;
+
+Contar la cantidad de películas por año.
+
+select year, count(year) from movie group by year;
+
+Alterar la tabla para agregar la categoría de la película
+
+alter table movie add column category varchar(128);
+
+Agregar categorías a todas las películas existentes
+Obtener un listado de las categorías (sin repeticiones)
+
+update movie set category = 'kids' where id = 1 or id=8;
+update movie set category = 'fiction science' where id = 4;
+update movie set category = 'fome' where id = 5 or id=6 or id=7;
+
