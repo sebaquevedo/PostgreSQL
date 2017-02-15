@@ -37,3 +37,4 @@ update movie set category = 'kids' where id = 1 or id=8;
 update movie set category = 'fiction science' where id = 4;
 update movie set category = 'fome' where id = 5 or id=6 or id=7;
 
+select distinct category from movie;
