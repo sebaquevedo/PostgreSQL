@@ -1,0 +1,29 @@
+1. Crear la base de datos movies
+	create database movies;
+	\c movies
+2. Crear la tabla movie con la clave primaria id y name
+	create table movie(id serial, name varchar(255));
+3. Ingresar la película El Rey León
+	insert into movies (name) values ('El rey Leon');
+4. Ingresar la película Terminator II
+	insert into movies (name) values ('Terminator');
+5. Alterar la tabla películas para agregar el año
+	Alter Table movie Add Column year integer;
+6. Cambiar los datos de todas las películas existentes a
+1984
+	Update movie set year=1984;
+7. Borrar la película Terminator II
+	Delete from movies where name="Terminator II";
+	Delete from movies where id=2;
+8. Crear un usuario nuevo en la base de datos
+	Create user madafaka;
+9. Asignarle un rol que sólo permite hacer consultas
+select (no podrá ingresar)
+	Grant select on all tables in schema public to madafaka;
+10. Cambiar de usuario en la base de datos
+	\q
+	psql movieman
+	alter role movieman with password 'movie';
+11. Probar que no puede ingresar una película
+insert into movie (name,year) values ('huachalomo 3.0 the movie',1998);
+ERROR: permiso denegado  a la relacion movie.
